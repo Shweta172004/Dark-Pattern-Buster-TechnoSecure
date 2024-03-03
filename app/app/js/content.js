@@ -1,4 +1,4 @@
-const endpoint = "http://127.0.0.1:5000/";
+const endpoint = "http:/127.0.0.1:5000/";
 const descriptions = {
   "Sneaking": "Coerces users to act in ways that they would not normally act by obscuring information.",
   "Urgency": "Places deadlines on things to make them appear more desirable",
@@ -7,16 +7,6 @@ const descriptions = {
   "Scarcity": "Tries to increase the value of something by making it appear to be limited in availability.",
   "Obstruction": "Tries to make an action more difficult so that a user is less likely to do that action.",
   "Forced Action": "Forces a user to complete extra, unrelated tasks to do something that should be simple.",
-};
-
-const styles = {
-  "Urgency": "background-color: rgba(255, 255, 224, 0.5); border: 4px solid yellow;",
-  "Social Proof": "background-color: rgba(213, 245, 211, 0.5); border: 4px solid #24a424;",
-  "Scarcity": "background-color: rgba(209, 224, 242, 0.5); border: 4px solid #2e6da4;",
-  "Misdirection": "background-color: rgba(245, 213, 214, 0.5); border: 4px solid #a94442;",
-  "Forced Action": "background-color: rgba(245, 213, 245, 0.5); border: 4px solid #a64ca6;",
-  "Obstruction": "background-color: rgba(240, 240, 240, 0.5); border: 4px solid #8c8c8c;",
-  "Sneaking": "background-color: rgba(255, 250, 230, 0.5); border: 4px solid #dbdb70;"
 };
 
 function scrape() {
@@ -80,7 +70,6 @@ function scrape() {
 
 function highlight(element, type) {
   element.classList.add("insite-highlight");
-  element.style = styles[type]; // Apply the specific style based on the dark pattern type
 
   let body = document.createElement("span");
   body.classList.add("insite-highlight-body");
@@ -102,8 +91,7 @@ function highlight(element, type) {
   element.appendChild(body);
 }
 
-function sendDarkPatterns(number)
-{
+function sendDarkPatterns(number) {
   chrome.runtime.sendMessage({
     message: "update_current_count",
     count: number,
@@ -120,18 +108,3 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
   }
 });
-
-function segments(body) {
-  // Assuming segments is a function that breaks down the document body into manageable parts
-  // For simplicity, this could be a simple traversal of all text-containing elements
-  let elements = [];
-  function traverse(node) {
-    if (node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '') {
-      elements.push(node.parentNode); // Adding the parent node to maintain reference to the actual element
-    } else {
-      node.childNodes.forEach(child => traverse(child));
-    }
-  }
-  traverse(body);
-  return elements;
-}

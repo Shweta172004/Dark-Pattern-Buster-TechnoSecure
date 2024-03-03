@@ -14,21 +14,18 @@
             "js/common.js",
             "js/block_segment.js",
             "js/content.js",
-          "screenshot.js"],
+            "js/SS.js",
+            "html2canvas.js"        
+        ],
         "css": [
             "css/insite.css"
         ],
         "run_at": "document_end"
     }],
-    "background": {
-        "service_worker":"js/eventpage.js",
-        "type": "module"
-    },
     "permissions": [
         "activeTab",
         "tabs",
         "storage",
-        "contextMenus",
         "scripting"
     ],
     "host_permissions": [

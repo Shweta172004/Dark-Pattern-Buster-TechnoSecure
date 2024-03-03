@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    <link rel="stylesheet" href="css/popup.css" type="text/css">
+    <!-- Updated html2canvas to a more recent version -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/image2canvas@1.0.1/index.min.js"></script> -->
+    <script src="html2canvas.js"></script> 
+    <!-- <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+    <script src="canvas2image.min.js"></script> -->
+    <!-- Ensure you have a valid path to canvas2image.js -->
+    <!-- For demonstration, the script tag is commented out. Replace the path accordingly. -->
+    <!-- <script src="path/to/your/canvas2image.js"></script> -->
+    <style>
+        .modal-header h1,
+        .modal-content .container .label,
+        .analyze-button,
+        .link,
+        .btn {
+            color: #fcfafc;
+            /* A more purple-ish color */
+        }
+
+        .analyze-button,
+        .btn {
+            background-color: #8E44AD;
+            /* A vibrant purple for the button */
+            border-color: #7D3C98;
+            /* Slightly darker purple for the border */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal-header">
+        <h1>SurakshaNET</h1>
+    </div>
+    <div class="modal-content">
+        <div class="container">
+            <p class="label">Dark Patterns</p>
+            <p class="number">n/a</p>
+        </div>
+        <button class="analyze-button" type="button">ANALYZE SITE</button>
+        <!-- Screenshot Button -->
+        <button id="screenshot-btn" class="btn">Take a Screenshot!</button>
+    </div>
+    <div class="modal-footer">
+        <a class="link" href="https://darkpatterns.org">What are dark patterns?</a>
+    </div>
+    <script src="js/popup.js"></script>
+</body>
+
+</html>

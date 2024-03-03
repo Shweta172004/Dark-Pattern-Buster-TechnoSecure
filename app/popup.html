@@ -1,29 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
     <link rel="stylesheet" href="css/popup.css" type="text/css">
+    <!-- Updated html2canvas to a more recent version -->
+    <script src= "html2canvas.js"></script>
+    <!-- Ensure you have a valid path to canvas2image.js -->
+    <script src="canvas2image.min.js"></script>    <!-- For demonstration, the script tag is commented out. Replace the path accordingly. -->
+    <!-- <script src="path/to/your/canvas2image.js"></script> -->
+    <style>
+        .modal-header h1, .modal-content .container .label, .analyze-button, .link, .btn {
+            color: #fcfafc; /* A more purple-ish color */
+        }
 
-    <script src="js/popup.js"></script>
+        .analyze-button, .btn {
+            background-color: #8E44AD; /* A vibrant purple for the button */
+            border-color: #7D3C98; /* Slightly darker purple for the border */
+        }
+    </style>
 </head>
-
 <body>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+
     <div class="modal-header">
-        <h1>
-            insite.
-        </h1
->    </div>
+        <h1>SurakshaNET</h1>
+    </div>
     <div class="modal-content">
         <div class="container">
-            <p class="label">dark patterns</p>
+            <p class="label">Dark Patterns</p>
             <p class="number">n/a</p>
         </div>
         <button class="analyze-button" type="button">ANALYZE SITE</button>
+        <!-- Screenshot Button -->
+        <button id="screenshot-btn" class="btn">Take a Screenshot!</button>
     </div>
-    <div class="modal-footer">
-        <a class="link" href="https://darkpatterns.org">What are dark patterns?</a>
-    </div>
-</body>
+    <script src="js/popup.js"></script>
+    <script >
+        // Import Canvas2Image from the module
+        document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('screenshot-btn');
+        btn.addEventListener('click', function() {
+        html2canvas(document.querySelector(".modal-content")).then(canvas => {
+        // Now you can use Canvas2Image.saveAsPNG(canvas) since it's imported
+        Canvas2Image.saveAsPNG(canvas);
+        });
+        });
+        });
+    // Use event delegation for dynamically added .insite-highlight elements
+    document.body.addEventListener('mouseover', function(event) {
+        if (event.target.classList.contains('insite-highlight')) {
+            event.target.classList.add('hovered-insite-highlight');
+        }
+    });
 
+    document.body.addEventListener('mouseout', function(event) {
+        if (event.target.classList.contains('insite-highlight')) {
+            event.target.classList.remove('hovered-insite-highlight');
+        }
+    });
+    </script>
+</body>
 </html>
