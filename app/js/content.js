@@ -80,7 +80,11 @@ function scrape() {
 
 function highlight(element, type) {
   element.classList.add("insite-highlight");
-  element.style = styles[type]; // Apply the specific style based on the dark pattern type
+  temp = type
+  if(type=="Social Proof") temp = "SocialProof"
+  if(type=="Forced Action") temp = "Forced Action";
+  element.classList.add(temp);
+  // element.style = styles[type]; // Apply the specific style based on the dark pattern type
 
   let body = document.createElement("span");
   body.classList.add("insite-highlight-body");
