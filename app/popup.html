@@ -1,64 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
     <link rel="stylesheet" href="css/popup.css" type="text/css">
-    <!-- Updated html2canvas to a more recent version -->
-    <script src= "html2canvas.js"></script>
-    <!-- Ensure you have a valid path to canvas2image.js -->
-    <script src="canvas2image.min.js"></script>    <!-- For demonstration, the script tag is commented out. Replace the path accordingly. -->
-    <!-- <script src="path/to/your/canvas2image.js"></script> -->
+    <title>SurakshaNET</title>
     <style>
-        .modal-header h1, .modal-content .container .label, .analyze-button, .link, .btn {
-            color: #fcfafc; /* A more purple-ish color */
+        :root {
+            --main-bg-color: #8E44AD;
+            --hover-bg-color: #7D3C98;
+            --font-color: #fcfafc;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modal-header, .modal-content .container .label, .analyze-button, .link, .btn {
+            color: var(--font-color);
         }
 
         .analyze-button, .btn {
-            background-color: #8E44AD; /* A vibrant purple for the button */
-            border-color: #7D3C98; /* Slightly darker purple for the border */
+            background-color: var(--main-bg-color);
+            border: 1px solid var(--hover-bg-color);
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
+        .analyze-button:hover, .btn:hover {
+            background-color: var(--hover-bg-color);
+        }
+
+        /* Further CSS styling */
     </style>
 </head>
 <body>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
-
-    <div class="modal-header">
+    <header class="modal-header">
         <h1>SurakshaNET</h1>
-    </div>
-    <div class="modal-content">
-        <div class="container">
+    </header>
+    <main class="modal-content">
+        <section class="container">
             <p class="label">Dark Patterns</p>
             <p class="number">n/a</p>
-        </div>
+        </section>
         <button class="analyze-button" type="button">ANALYZE SITE</button>
-        <!-- Screenshot Button -->
         <button id="screenshot-btn" class="btn">Take a Screenshot!</button>
-    </div>
+    </main>
+    <script src="html2canvas.js"></script>
+    <script src="canvas2image.min.js"></script>
     <script src="js/popup.js"></script>
-    <script >
-        // Import Canvas2Image from the module
-        document.addEventListener('DOMContentLoaded', function() {
-        var btn = document.getElementById('screenshot-btn');
-        btn.addEventListener('click', function() {
-        html2canvas(document.querySelector(".modal-content")).then(canvas => {
-        // Now you can use Canvas2Image.saveAsPNG(canvas) since it's imported
-        Canvas2Image.saveAsPNG(canvas);
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('screenshot-btn');
+            btn.addEventListener('click', () => {
+                html2canvas(document.querySelector(".modal-content")).then(canvas => {
+                    Canvas2Image.saveAsPNG(canvas);
+                });
+            });
         });
-        });
-        });
-    // Use event delegation for dynamically added .insite-highlight elements
-    document.body.addEventListener('mouseover', function(event) {
-        if (event.target.classList.contains('insite-highlight')) {
-            event.target.classList.add('hovered-insite-highlight');
-        }
-    });
 
-    document.body.addEventListener('mouseout', function(event) {
-        if (event.target.classList.contains('insite-highlight')) {
-            event.target.classList.remove('hovered-insite-highlight');
-        }
-    });
+        document.body.addEventListener('mouseover', event => {
+            if (event.target.classList.contains('insite-highlight')) {
+                event.target.classList.add('hovered-insite-highlight');
+            }
+        });
+
+        document.body.addEventListener('mouseout', event => {
+            if (event.target.classList.contains('insite-highlight')) {
+                event.target.classList.remove('hovered-insite-highlight');
+            }
+        });
     </script>
 </body>
 </html>

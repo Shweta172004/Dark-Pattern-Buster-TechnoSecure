@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="chart.umd.min.js"></script> 
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>SurakshaNET</h1>
+    <h2>Dark Pattern Dashboard</h2>
+    <div id="one">
+        <div id="two" class="half">
+            <div id="three-alt" class="fourth">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <div id="button-container" class="button-container">
+                    <!-- <button class="button" onclick="select(1)">Button 1</button> -->
+                </div>
+            </div>
+            <div id="three" class="fourth">
+                <div class="card eight" id="deception"> 
+                </div>
+                <div class="card eight">
+                    <div>
+                        <p class="key">Reach Per Million</p>
+                        <p id="rpm" class="value">1000</p>
+                    </div>
+                    <div>
+                        <p class="key">Page Views Per Million</p>
+                        <p id="pvpm" class="value">1000</p>
+                    </div>
+                    <div>
+                        <p class="key">Page Views Per User</p>
+                        <p id="pvpu" class="value">1000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="two-alt" class="card half">
+            <canvas id="main-chart"></canvas>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

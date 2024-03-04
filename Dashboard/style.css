@@ -1,0 +1,211 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #0290a4; */
+  background: linear-gradient(to bottom right, #c068c5, #2a0031);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 3rem;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 6px 6px #00000089;
+}
+
+h2 {
+  font-size: 2rem;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#one {
+  display: flex;
+  gap: 0.5rem;
+  width: 80%;
+  height: 70%;
+  border-radius: 2rem;
+}
+
+#two {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 2rem 0 0 2rem;
+}
+
+#three {
+  display: flex;
+  gap: 0.5rem;
+  border-radius: 0 0 0 2rem;
+}
+
+.half,
+.eight {
+  width: 50%;
+}
+
+.eight,
+#two-alt,
+#three-alt {
+  background-color: #00000020;
+}
+
+#three-alt {
+  border-radius: 2rem 0 0 0;
+}
+
+#deception {
+  border-radius: 0 0 0 2rem;
+}
+
+.fourth {
+  height: 50%;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#two-alt {
+  border-radius: 0 2rem 2rem 0;
+}
+
+#two-alt,
+.eight,
+.web-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#three-alt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 2rem 0;
+}
+
+#main-chart,
+#sec-chart {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.search-bar {
+  width: 80%;
+  padding: 10px;
+  margin: 20px auto;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Style the button container */
+.button-container {
+  width: 80%;
+}
+
+/* Style each button */
+.button {
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #00000030; /* Green background */
+  color: white; /* White text */
+  padding: 14px 20px; /* Padding */
+  margin: 8px 16px; /* Margin */
+  border: none;
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Change color on hover */
+.button:hover {
+  background-color: #00000040;
+  border: 1px solid white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #00000015;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #00000020;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00000030;
+}
+
+.eight{
+  flex-direction: column;
+}
+
+#deception{
+  gap: 1rem;
+}
+
+.category{
+  font-size: 2.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.rank{
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: rgb(244, 157, 255);
+}
+
+.num{
+  color: white;
+}
+
+.deceptive{
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: rgb(224, 154, 154);
+}
+
+.non-deceptive{
+  font-size: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: rgb(156, 224, 154);
+}
+
+.key{
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: rgb(244, 157, 255);
+}
+.value{
+  font-size: 1.8rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: white;
+}
