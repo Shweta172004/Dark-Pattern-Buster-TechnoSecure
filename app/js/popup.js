@@ -5,10 +5,18 @@ window.onload = function () {
 
   document.getElementsByClassName("analyze-button")[0].onclick = function () {
     chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { message: "analyze_site" });
+      chrome.tabs.sendMessage(tabs[0].id, { message: "analyze_site"});
     });
+  
+  document.getElementsByClassName("screenshot-btn")[0].onclick = function () {
+      chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { message: "capture-url", url: tabs[0].url });
+      });};
+    
   };
 
+
+  
   document.getElementsByClassName("link")[0].onclick = function () {
     chrome.tabs.create({
       url: document.getElementsByClassName("link")[0].getAttribute("href"),
@@ -21,4 +29,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     document.getElementsByClassName("number")[0].textContent = request.count;
   }
 });
+
+// chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  
+//   }
+// });
+
+        
 

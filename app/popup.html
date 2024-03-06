@@ -80,20 +80,43 @@
             <p class="number">Not analyzed</p>
         </div>
         <button class="analyze-button" type="button">ANALYZE SITE</button>
-        <button id="screenshot-btn" type="button">Take a Screenshot</button>
+        <button class="screenshot-btn" type="button">Take a Screenshot</button>
     </div>
     <script src="html2canvas.js"></script>
     <script src="canvas2image.min.js"></script>
     <script src="js/popup.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const screenshotBtn = document.getElementById('screenshot-btn');
-            screenshotBtn.addEventListener('click', () => {
-                html2canvas(document.querySelector(".modal-content")).then(canvas => {
-                    Canvas2Image.saveAsPNG(canvas);
-                });
-            });
-        });
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const screenshotBtn = document.getElementById('screenshot-btn');
+        //     screenshotBtn.addEventListener('click', () => {
+        //         html2canvas(document.querySelector(".modal-content")).then(canvas => {
+        //             Canvas2Image.saveAsPNG(canvas);
+        //         });
+        //     });
+        // });
+        
+    // function sendURLToServer() {
+    //     // Assuming you want to send the URL of the page where this script runs
+    //     const pageUrl = window.location.href; 
+    //     // Replace '/api/url' with your actual server endpoint that handles the URL data
+    //     fetch('http://localhost:5000/api/url', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ url: pageUrl }),
+    //     })
+    //     .then(response => {
+    //         if(response.ok) {
+    //             return response.json();
+    //         }
+    //         throw new Error('Network response was not ok.');
+    //     })
+    //     .then(data => console.log('URL sent successfully:', data))
+    //     .catch((error) => {
+    //         console.error('Error sending URL:', error);
+    //     });
+    // }
     </script>
 </body>
 </html>

@@ -122,8 +122,24 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     if (element) {
       sendDarkPatterns(element.value);
     }
-  }
+  }else if (request.message === 'capture-url') {
+    // URL from the content script
+     // Assuming the URL is sent in the request
+     const { url } = request;
+
+     // Send the URL to the specified endpoint
+     fetch('http://localhost:5000/api/url', {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify({ url: url }),
+     })
+     .then(response => response.json())
+     .then(data => console.log('Success:', data))
+     .catch((error) => console.error('Error:', error));};
+  
 });
+
+
 
 function segments(body) {
   // Assuming segments is a function that breaks down the document body into manageable parts

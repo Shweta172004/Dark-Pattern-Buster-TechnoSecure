@@ -9,6 +9,16 @@ category_vect = load('category_vectorizer.joblib')
 
 app = Flask(__name__)
 CORS(app)
+@app.route('/api/url', methods=['POST'])
+def receive_url():
+    data = request.get_json()  # Get JSON data sent by the client
+    if data and 'url' in data:
+        page_url = data['url']
+        print("Received URL:", page_url)
+        # Here you can add logic to process the URL as needed
+        return jsonify({"message": "URL received", "url": page_url})
+    else:
+        return jsonify({"error": "URL not provided"}), 400
 
 @app.route('/', methods=['POST'])
 def main():
