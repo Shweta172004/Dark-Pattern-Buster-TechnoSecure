@@ -10,4 +10,11 @@
 <h2>Technologies</h2>
 <p><ul><b>Models</b>:  BART, RoBERTa, CLIP for image classification,YOLO and OCR for UI elements.</ul></p>
 <p><ul><b>Frameworks</b>: PyTorch, TensorFlow, Hugging Face Transformers.</ul></p>
-<p><ul><b>Other Tools</b>:Reinforcement Learning with Human Feedback (RLHF), Few-Shot Learning.</ul></p>
+<p><ul><b>Other Tools</b>: Reinforcement Learning with Human Feedback (RLHF), Few-Shot Learning.</ul></p>
+<h2>Results</h2>
+<p><ul><b>Text Detection</b>: Achieved 96% accuracy in identifying dark patterns in text.</ul></p>
+<p><ul><b>Image Detection</b>: Achieved 80% accuracy in detecting dark patterns in UI/UX images.</ul></p>
+<h2>Future Work</h2>
+<p><ul><b>Expand Dataset</b>: Adding more dark patterns to improve model generalization.</ul></p>
+<p><ul><b>Improved UI/UX Analysis</b>: : Enhancing the accuracy of image classification through better object detection techniques.</ul></p>
+
