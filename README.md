@@ -7,3 +7,7 @@
 <p><ul><b>High Accuracy</b>: Achieved 96% accuracy on text and 80% accuracy on image-based dark pattern detection.</ul></p>
 <p><ul><b>Few-Shot Classification</b>: Uses a few-shot learning approach to enhance performance in limited-data scenarios.</ul></p>
 <p><ul><b>OCR for Images</b>: Uses object detection and Optical Character Recognition (OCR) to analyze image-based dark patterns in UI/UX elements.</ul></p>
+<h2>Technologies</h2>
+<p><ul><b>Models</b>:  BART, RoBERTa, CLIP for image classification,YOLO and OCR for UI elements.</ul></p>
+<p><ul><b>Frameworks</b>: PyTorch, TensorFlow, Hugging Face Transformers.</ul></p>
+<p><ul><b>Other Tools</b>:Reinforcement Learning with Human Feedback (RLHF), Few-Shot Learning.</ul></p>
